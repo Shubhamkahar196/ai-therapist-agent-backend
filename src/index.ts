@@ -121,8 +121,6 @@ const corsOptions: cors.CorsOptions = {
 app.use(helmet());
 // Apply CORS with our options BEFORE routes so preflight and credentials behave
 app.use(cors(corsOptions));
-// Ensure preflight requests are handled for all routes
-app.options("*", cors(corsOptions));
 
 app.use(express.json()); // Parse JSON bodies
 app.use(morgan("dev")); // HTTP request logger
